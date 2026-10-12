@@ -1,0 +1,43 @@
+﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+
+
+namespace IdentityServerHost.Quickstart.UI;
+
+public class SecurityHeadersAttribute : ActionFilterAttribute
+{
+    public override void OnResultExecuting(ResultExecutingContext context)
+    {
+        var result = context.Result;
+        if (result is ViewResult)
+        {
+            if (!context.HttpContext.Response.Headers.ContainsKey("X-Content-Type-Options"))
+            {
+                context.HttpContext.Response.Headers.Append("X-Content-Type-Options", "nosniff");
+            }
+
+            if (!context.HttpContext.Response.Headers.ContainsKey("X-Frame-Options"))
+            {
+                context.HttpContext.Response.Headers.Append("X-Frame-Options", "SAMEORIGIN");
+            }
+
+            var csp = "default-src 'self'; object-src 'none'; frame-ancestors 'none'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';";
+
+            if (!context.HttpContext.Response.Headers.ContainsKey("Content-Security-Policy"))
+            {
+                context.HttpContext.Response.Headers.Append("Content-Security-Policy", csp);
+            }
+            if (!context.HttpContext.Response.Headers.ContainsKey("X-Content-Security-Policy"))
+            {
+                context.HttpContext.Response.Headers.Append("X-Content-Security-Policy", csp);
+            }
+
+            var referrer_policy = "no-referrer";
+            if (!context.HttpContext.Response.Headers.ContainsKey("Referrer-Policy"))
+            {
+                context.HttpContext.Response.Headers.Append("Referrer-Policy", referrer_policy);
+            }
+        }
+    }
+}
+

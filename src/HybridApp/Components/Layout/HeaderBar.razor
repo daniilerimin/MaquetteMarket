@@ -1,0 +1,34 @@
+﻿@* @using Microsoft.AspNetCore.Components.Endpoints *@
+
+<div class="MaquetteMarket-header @(IsCatalog? "home" : "")">
+    <div class="MaquetteMarket-header-hero">
+        @{
+            var headerImage = IsCatalog ? "images/header-home.webp" : "images/header.webp";
+        }
+        <img src="@headerImage" />
+    </div>
+    <div class="MaquetteMarket-header-container">
+        <nav class="MaquetteMarket-header-navbar">
+            <a class="logo logo-header" href="">
+                <img src="images/logo-header.svg" class="logo logo-header" />
+            </a>
+            
+@*             <UserMenu />
+            <CartMenu />
+ *@        </nav>
+        <div class="MaquetteMarket-header-intro">
+            <h1><SectionOutlet SectionName="page-header-title" /></h1>
+            <p><SectionOutlet SectionName="page-header-subtitle" /></p>
+        </div>
+    </div>
+</div>
+
+@code {
+    // [CascadingParameter]
+    // public HttpContext? HttpContext { get; set; }
+
+    // // We can use Endpoint Metadata to determine the page currently being visited
+    // private Type? PageComponentType => HttpContext?.GetEndpoint()?.Metadata.OfType<ComponentTypeMetadata>().FirstOrDefault()?.Type;
+    // private bool IsCatalog => PageComponentType == typeof(Pages.Catalog.Catalog);
+    private bool IsCatalog { get; } = true;
+}

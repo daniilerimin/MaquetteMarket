@@ -1,0 +1,11 @@
+﻿global using System.ComponentModel.DataAnnotations;
+global using System.Security.Claims;
+global using System.Text.Json;
+global using Grpc.Core;
+global using Microsoft.AspNetCore.Authorization;
+global using MaquetteMarket.Basket.API.Extensions;
+global using MaquetteMarket.Basket.API.Grpc;
+global using MaquetteMarket.EventBus.Abstractions;
+global using MaquetteMarket.EventBus.Events;
+global using MaquetteMarket.ServiceDefaults;
+global using StackExchange.Redis;

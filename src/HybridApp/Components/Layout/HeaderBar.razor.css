@@ -1,0 +1,68 @@
+﻿.MaquetteMarket-header {
+    position: relative;
+    max-width: 120rem;
+    margin: auto;
+}
+
+.MaquetteMarket-header.home .MaquetteMarket-header-container {
+    height: 38rem;
+    margin-bottom: 0;
+}
+
+.MaquetteMarket-header .MaquetteMarket-header-container {
+    height: 15rem;
+    margin-bottom: 4rem;
+}
+
+.MaquetteMarket-header-hero {
+    overflow: hidden;
+    position: absolute;
+    max-width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.MaquetteMarket-header-container {
+    position: relative;
+    margin: auto;
+    margin: 0 10rem;
+}
+
+.MaquetteMarket-header-intro {
+    position: absolute;
+    max-width: 48rem;
+    bottom: 3rem;
+    white-space: nowrap;
+}
+
+.MaquetteMarket-header-intro h1 {
+    color: #000;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0;
+}
+
+.MaquetteMarket-header-intro p {
+    color: #000;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    margin: 0;
+}
+
+.MaquetteMarket-header .logo-header {
+    color: black;
+    margin-right: auto;
+}
+
+.MaquetteMarket-header-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.25rem;
+    gap: 1.5rem;
+}

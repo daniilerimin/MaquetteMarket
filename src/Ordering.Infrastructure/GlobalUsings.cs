@@ -1,0 +1,12 @@
+﻿global using System.Data;
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Design;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using MaquetteMarket.Ordering.Domain.AggregatesModel.BuyerAggregate;
+global using MaquetteMarket.Ordering.Domain.AggregatesModel.OrderAggregate;
+global using MaquetteMarket.Ordering.Domain.Exceptions;
+global using MaquetteMarket.Ordering.Domain.Seedwork;
+global using MaquetteMarket.Ordering.Infrastructure.EntityConfigurations;
+global using MaquetteMarket.Ordering.Infrastructure.Idempotency;
